@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#1e1e36;color:#e0e0e0;display:flex;align-items:center;justify-content:center;height:100vh;overflow:auto}
+  #app{text-align:center}
+  .loading{color:#666;font-size:14px}
+  .error{color:#f44336}
+</style>
+</head>
+<body>
+<div id="app"><div class="loading">正在加载...</div></div>
+
+<script src="/nano_tob.js"></script>
+<script src="/nano_script_app.js"></script>
+<script>
+  var el = document.getElementById('app');
+  nanoScriptInit().catch(function(e) {
+    el.innerHTML = '<div class="error">' + e.message + '</div>';
+  });
+</script>
+</body>
+</html>

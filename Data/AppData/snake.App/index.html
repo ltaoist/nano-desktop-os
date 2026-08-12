@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>贪吃蛇</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Segoe UI',sans-serif;
+    background:#0f0f23;
+    color:#e0e0e0;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100vh;
+    padding:20px;
+  }
+  .container{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .game-area{
+    text-align:center;
+  }
+  .game-area h1{
+    color:#53d769;
+    margin-bottom:12px;
+    font-size:28px;
+  }
+  canvas{
+    border:2px solid #333;
+    background:#1a1a2e;
+    display:block;
+    margin:0 auto;
+  }
+  .score-display{
+    margin-top:10px;
+    font-size:18px;
+    color:#53d769;
+  }
+  .controls{
+    margin-top:10px;
+    font-size:13px;
+    color:#888;
+  }
+  .leaderboard{
+    background:#1a1a2e;
+    border:1px solid #333;
+    border-radius:8px;
+    padding:16px;
+    min-width:260px;
+    max-height:500px;
+    overflow-y:auto;
+  }
+  .leaderboard h2{
+    color:#53d769;
+    text-align:center;
+    margin-bottom:12px;
+    font-size:20px;
+  }
+  .leaderboard table{
+    width:100%;
+    border-collapse:collapse;
+  }
+  .leaderboard th,.leaderboard td{
+    padding:6px 8px;
+    text-align:left;
+    border-bottom:1px solid #2a2a4a;
+  }
+  .leaderboard th{
+    color:#aaa;
+    font-weight:600;
+    font-size:13px;
+  }
+  .leaderboard td{
+    font-size:14px;
+  }
+  .rank{color:#ffd700;font-weight:700;width:36px}
+  .name-submit{
+    margin-top:8px;
+    text-align:center;
+  }
+  .name-submit input{
+    background:#0f0f23;
+    border:1px solid #444;
+    color:#e0e0e0;
+    padding:6px 10px;
+    border-radius:4px;
+    width:120px;
+    font-size:14px;
+    outline:none;
+  }
+  .name-submit input:focus{border-color:#53d769}
+  .name-submit button{
+    background:#53d769;
+    color:#0f0f23;
+    border:none;
+    padding:6px 14px;
+    border-radius:4px;
+    cursor:pointer;
+    font-weight:600;
+    margin-left:6px;
+    font-size:14px;
+  }
+  .name-submit button:hover{background:#45b858}
+  .status{text-align:center;margin-top:6px;font-size:13px;color:#ff6b6b}
+  .status.info{color:#53d769}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="game-area">
+    <h1>🐍 贪吃蛇</h1>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <div class="score-display">得分: <span id="score">0</span></div>
+    <div class="controls">方向键 / WASD 控制方向 | 空格键重新开始 | Enter 提交成绩</div>
+    <div class="name-submit" id="submitArea" style="display:none">
+      <input id="playerName" placeholder="输入昵称" maxlength="12">
+      <button id="submitBtn">提交成绩</button>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+  <div class="leaderboard">
+    <h2>🏆 排行榜</h2>
+    <table>
+      <thead><tr><th>#</th><th>昵称</th><th>分数</th></tr></thead>
+      <tbody id="lbBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="/nano_tob.js"></script>
+<script>
+(function(){
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var scoreEl = document.getElementById('score');
+  var submitArea = document.getElementById('submitArea');
+  var playerName = document.getElementById('playerName');
+  var submitBtn = document.getElementById('submitBtn');
+  var statusEl = document.getElementById('status');
+  var lbBody = document.getElementById('lbBody');
+
+  // 游戏状态
+  var GRID = 20;
+  var COLS = canvas.width / GRID;
+  var ROWS = canvas.height / GRID;
+  var snake, food, direction, nextDirection, score, gameRunning, gameLoop;
+
+  function initGame(){
+    snake = [{x:10, y:10}, {x:9, y:10}, {x:8, y:10}];
+    direction = {x:1, y:0};
+    nextDirection = {x:1, y:0};
+    score = 0;
+    gameRunning = true;
+    scoreEl.textContent = '0';
+    submitArea.style.display = 'none';
+    statusEl.textContent = '';
+    statusEl.className = 'status';
+    spawnFood();
+  }
+
+  function spawnFood(){
+    do {
+      food = {x: Math.floor(Math.random()*COLS), y: Math.floor(Math.random()*ROWS)};
+    } while(snake.some(function(s){return s.x===food.x && s.y===food.y}));
+  }
+
+  function update(){
+    if(!gameRunning) return;
+    direction = {x: nextDirection.x, y: nextDirection.y};
+    var head = {x: snake[0].x + direction.x, y: snake[0].y + direction.y};
+
+    // 撞墙
+    if(head.x < 0 || head.x >= COLS || head.y < 0 || head.y >= ROWS){
+      endGame();
+      return;
+    }
+    // 撞到自己
+    if(snake.some(function(s){return s.x===head.x && s.y===head.y})){
+      endGame();
+      return;
+    }
+
+    snake.unshift(head);
+    if(head.x===food.x && head.y===food.y){
+      score += 10;
+      scoreEl.textContent = score;
+      spawnFood();
+    } else {
+      snake.pop();
+    }
+  }
+
+  function draw(){
+    ctx.fillStyle = '#1a1a2e';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // 画蛇
+    ctx.fillStyle = '#53d769';
+    snake.forEach(function(s){ctx.fillRect(s.x*GRID+1, s.y*GRID+1, GRID-2, GRID-2)});
+    // 蛇头
+    ctx.fillStyle = '#7cf58c';
+    ctx.fillRect(snake[0].x*GRID+1, snake[0].y*GRID+1, GRID-2, GRID-2);
+
+    // 画食物
+    ctx.fillStyle = '#ff6b6b';
+    ctx.beginPath();
+    ctx.arc(food.x*GRID+GRID/2, food.y*GRID+GRID/2, GRID/2-2, 0, Math.PI*2);
+    ctx.fill();
+  }
+
+  async function endGame(){
+    gameRunning = false;
+    clearInterval(gameLoop);
+    if(score > 0){
+      // 实时查询排行，判断分数能否进前10
+      try{
+        var lb = await callTOBMethod(appTOB, 'get_leaderboard', []);
+        if(!lb || lb.length < 10 || score > lb[lb.length-1].score){
+          statusEl.textContent = '游戏结束！得分: ' + score;
+          submitArea.style.display = 'block';
+          playerName.focus();
+        } else {
+          statusEl.textContent = '游戏结束！得分: ' + score + '（未进入排行榜）';
+        }
+      } catch(e){
+        statusEl.textContent = '游戏结束！得分: ' + score;
+      }
+    } else {
+      statusEl.textContent = '游戏结束！得分: 0';
+    }
+    statusEl.className = 'status';
+  }
+
+  function restartGame(){
+    clearInterval(gameLoop);
+    initGame();
+    gameLoop = setInterval(function(){update();draw()}, 100);
+  }
+
+  // 键盘控制
+  document.addEventListener('keydown', function(e){
+    var key = e.key.toLowerCase();
+    if(key==='arrowup'||key==='w'){if(direction.y!==1) nextDirection={x:0,y:-1};e.preventDefault()}
+    if(key==='arrowdown'||key==='s'){if(direction.y!==-1) nextDirection={x:0,y:1};e.preventDefault()}
+    if(key==='arrowleft'||key==='a'){if(direction.x!==1) nextDirection={x:-1,y:0};e.preventDefault()}
+    if(key==='arrowright'||key==='d'){if(direction.x!==-1) nextDirection={x:1,y:0};e.preventDefault()}
+    if(key===' '){
+      if(!gameRunning && submitArea.style.display !== 'none') return;
+      e.preventDefault();restartGame()}
+  });
+
+  // TOB 通信
+  var appTOB = null;
+
+  function renderLeaderboard(list){
+    lbBody.innerHTML = list.map(function(item, i){
+      var r = i+1;
+      var medal = r===1?'🥇': r===2?'🥈': r===3?'🥉': r;
+      return '<tr><td class="rank">'+medal+'</td><td>'+esc(item.name)+'</td><td>'+item.score+'</td></tr>';
+    }).join('');
+  }
+
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+  async function loadLeaderboard(){
+    if(!appTOB) return;
+    try{
+      var data = await callTOBMethod(appTOB, 'get_leaderboard', []);
+      renderLeaderboard(data || []);
+    } catch(e){}
+  }
+
+  async function doSubmit(){
+    var name = playerName.value.trim();
+    if(!name){statusEl.textContent='请输入昵称';statusEl.className='status';return}
+    if(!appTOB) return;
+    try{
+      var data = await callTOBMethod(appTOB, 'submit_score', [name, score]);
+      renderLeaderboard(data || []);
+      submitArea.style.display = 'none';
+      statusEl.textContent = '成绩已提交！';
+      statusEl.className = 'status info';
+    } catch(e){
+      statusEl.textContent = '提交失败: '+e.message;
+    }
+  }
+
+  submitBtn.addEventListener('click', doSubmit);
+  playerName.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){e.preventDefault();doSubmit()}
+  });
+
+  // 启动
+  (async function(){
+    await initializeTOBM();
+    appTOB = await waitNamedTOB('app', 10000);
+    if(!appTOB){statusEl.textContent='应用未就绪';return}
+    await loadLeaderboard();
+    initGame();
+    gameLoop = setInterval(function(){update();draw()}, 100);
+  })().catch(function(e){
+    statusEl.textContent = '错误: '+e.message;
+  });
+})();
+</script>
+</body>
+</html>
