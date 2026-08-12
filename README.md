@@ -1,5 +1,11 @@
 # Nano Desktop OS
 
+![](docs\assets\login.png)
+![](docs\assets\pane.png)
+![](docs\assets\calc.png)
+![](docs\assets\snake.png)
+
+
 ## 启动
 
 ```
@@ -12,7 +18,7 @@ python src\background\launch.py
 
 ## app 开发
 
-参考 `Data\AppData\calc.App` 和 `Data\AppData\snake.App`
+参考 [Data\AppData\calc.App](Data\AppData\calc.App) 和 [Data\AppData\snake.App](Data\AppData\snake.App)
 
 ## 核心观念
 
@@ -23,6 +29,6 @@ python src\background\launch.py
 
 ## 更多资料
 
-参考 `资料.md` 。
+参考 [资料.md](资料.md) 。
 
 也可以使用AI对代码进行分析。
