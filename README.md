@@ -1,15 +1,15 @@
 # Nano Desktop OS
 
-![](docs\assets\login.png)
-![](docs\assets\pane.png)
-![](docs\assets\calc.png)
-![](docs\assets\snake.png)
+![](docs/assets/login.png)
+![](docs/assets/pane.png)
+![](docs/assets/calc.png)
+![](docs/assets/snake.png)
 
 
 ## 启动
 
 ```
-python src\background\launch.py
+python src/background/launch.py
 ```
 
 访问 `http://localhost:5173` 。
@@ -18,7 +18,7 @@ python src\background\launch.py
 
 ## app 开发
 
-参考 [Data\AppData\calc.App](Data\AppData\calc.App) 和 [Data\AppData\snake.App](Data\AppData\snake.App)
+参考 [Data/AppData/calc.App](Data/AppData/calc.App) 和 [Data/AppData/snake.App](Data/AppData/snake.App)
 
 ## 核心观念
 
