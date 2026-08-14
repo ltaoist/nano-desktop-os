@@ -1,0 +1,1 @@
+var e=`/assets/snake.png`;export{e as t};

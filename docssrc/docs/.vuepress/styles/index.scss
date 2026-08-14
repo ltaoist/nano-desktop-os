@@ -1,0 +1,25 @@
+.navbar {
+  height: 42px;
+  line-height: 42px;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.navbar .navbar-brand {
+  pointer-events: none;
+  cursor: default;
+}
+
+.navbar .navbar-brand .site-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--c-text);
+}
+
+.navbar-inner {
+  padding: 0 24px;
+  max-width: none;
+}
+
+.navbar .navbar-items-wrapper {
+  display: none;
+}

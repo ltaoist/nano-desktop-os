@@ -31,3 +31,6 @@ Thumbs.db
 # Data
 Data/AppDataStore/
 Data/System/
+
+# Node.js
+package-lock.json

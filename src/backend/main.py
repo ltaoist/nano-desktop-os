@@ -385,6 +385,72 @@ async def install_app(data: dict):
     return result
 
 
+@app.post("/api/apps/upload")
+async def upload_app(files: list[UploadFile] = File(...)):
+    """通过拖拽/文件选择上传安装应用，支持 ZIP/7z/tar.gz 压缩包、.App 文件夹、.py 脚本文件"""
+    import tempfile
+    import shutil as _shutil
+
+    if not files:
+        return JSONResponse({"success": False, "error": "未收到文件"}, status_code=400)
+
+    tmp_dir = tempfile.mkdtemp(prefix="nano_install_")
+    try:
+        if len(files) == 1:
+            # 单文件（可能是压缩包或脚本文件）：直接保存后交给 install_app 自动识别
+            single = files[0]
+            filename = single.filename or "upload.bin"
+            safe_name = os.path.basename(filename.replace("\\", "/"))
+            file_path = os.path.join(tmp_dir, safe_name)
+            with open(file_path, "wb") as f:
+                while True:
+                    chunk = await single.read(1024 * 256)
+                    if not chunk:
+                        break
+                    f.write(chunk)
+            result = app_manager.install_app(file_path)
+        else:
+            # 多个文件：文件夹上传，保留目录结构
+            # 找顶层目录名（取第一个文件的第一段路径）
+            first_rel = files[0].filename.replace("\\", "/")
+            top_dir = first_rel.split("/")[0] if "/" in first_rel else None
+
+            if not top_dir:
+                # 没有目录结构，当作散装文件放入以第一个文件命名的目录
+                top_dir = os.path.splitext(os.path.basename(first_rel))[0] + ".App"
+
+            for uf in files:
+                rel_path = uf.filename.replace("\\", "/")
+                # 如果 webkitRelativePath 以顶层目录开头，去掉它；否则保留
+                if rel_path.startswith(top_dir + "/"):
+                    rel_inside = rel_path[len(top_dir) + 1:]
+                else:
+                    rel_inside = rel_path
+
+                dest_path = os.path.join(tmp_dir, top_dir, rel_inside)
+                os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                with open(dest_path, "wb") as f:
+                    while True:
+                        chunk = await uf.read(1024 * 256)
+                        if not chunk:
+                            break
+                        f.write(chunk)
+
+            source_dir = os.path.join(tmp_dir, top_dir)
+            result = app_manager.install_app(source_dir)
+
+        if result.get("success"):
+            print(f"[App] 上传安装成功: {result.get('name', '')}")
+            _broadcast_apps()
+        return result
+    finally:
+        # 清理临时目录
+        try:
+            _shutil.rmtree(tmp_dir, ignore_errors=True)
+        except Exception:
+            pass
+
+
 @app.delete("/api/apps/{app_name}")
 async def uninstall_app(app_name: str):
     result = app_manager.uninstall_app(app_name)

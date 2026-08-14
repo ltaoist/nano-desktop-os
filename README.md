@@ -1,9 +1,9 @@
 # Nano Desktop OS
 
-![](docs\assets\login.png)
-![](docs\assets\pane.png)
-![](docs\assets\calc.png)
-![](docs\assets\snake.png)
+![](docssrc\assets\login.png)
+![](docssrc\assets\pane.png)
+![](docssrc\assets\calc.png)
+![](docssrc\assets\snake.png)
 
 
 ## 启动

@@ -2,3 +2,6 @@
 fastapi>=0.104.0
 uvicorn>=0.24.0
 websockets>=12.0
+python-multipart>=0.0.6
+# 压缩包支持（可选依赖，缺失时对应格式会返回明确提示）
+py7zr>=0.20.0
