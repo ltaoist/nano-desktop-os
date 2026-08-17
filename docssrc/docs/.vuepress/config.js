@@ -71,10 +71,11 @@ export default {
     lastUpdated: true,
     lastUpdatedText: '📅 更新时间',
     docsRepo: 'https://github.com/ltaoist/nano-desktop-os',
-    docsBranch: 'master',
+    docsBranch: 'main',
     docsDir: 'docssrc/docs',
     editLink: true,
-    editLinkText: '在 GitHub 上编辑此页'
+    editLinkText: '在 GitHub 上编辑此页',
+    editLinkPattern: ':repo/blob/:branch/:path'
   }),
   plugins: [
     searchPlugin({
