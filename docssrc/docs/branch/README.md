@@ -63,8 +63,8 @@ Nano Desktop/
 
 ```bash
 # 1. 克隆仓库
-git clone <repo-url>
-cd nano-desktop
+git clone https://github.com/ltaoist/nano-desktop-os
+cd nano-desktop-os
 
 # 2. 安装 Python 依赖
 pip install -r requirements.txt
@@ -120,8 +120,8 @@ npm run docs:dev    # http://localhost:8080
 在 GitHub 上 Fork 仓库后克隆到本地：
 
 ```bash
-git clone https://github.com/<your-username>/nano-desktop.git
-cd nano-desktop
+git clone https://github.com/ltaoist/nano-desktop-os
+cd nano-desktop-os
 ```
 
 项目采用 MIT 许可证，可自由使用、修改、商用、再分发，唯一要求是保留原始版权声明。常见的定制方向：
