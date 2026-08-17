@@ -5,7 +5,7 @@ import { searchPlugin } from '@vuepress/plugin-search'
 export default {
   title: 'Nano Desktop OS Resources',
   description: 'Nano Desktop OS 文档',
-  base: '/',
+  base: '/nano-desktop-os/',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
