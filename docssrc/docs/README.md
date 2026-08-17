@@ -8,10 +8,10 @@ Nano Desktop OS 是一个以 **逻辑线程编程（Logical Thread Programming�
 
 ---
 
-- [操作指南](/guide/) — 从启动到使用的完整流程
-- [应用开发](/dev/) — 编写 Nano Desktop OS 应用
-- [TOB 编程](/tob/) — 前后端互操作的核心机制
-- [calc.App 例程](/calc/) — 通过一个计算器学习 TOB 编程
-- [snake.App 例程](/snake/) — 通过一个贪吃蛇游戏进一步学习TOB 编程
-- [分支开发](/branch/) — 获取源码与搭建开发环境
-- [最小系统](/minimal/) — 核心组件的实现原理
+- [操作指南](./guide/) — 从启动到使用的完整流程
+- [应用开发](./dev/) — 编写 Nano Desktop OS 应用
+- [TOB 编程](./tob/) — 前后端互操作的核心机制
+- [calc.App 例程](./calc/) — 通过一个计算器学习 TOB 编程
+- [snake.App 例程](./snake/) — 通过一个贪吃蛇游戏进一步学习TOB 编程
+- [分支开发](./branch/) — 获取源码与搭建开发环境
+- [最小系统](./minimal/) — 核心组件的实现原理

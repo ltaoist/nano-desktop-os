@@ -4,7 +4,7 @@
 
 ---
 
-- [什么是线程代理对象](/tob/concept)
-- [TOB 原语](/tob/primitives)
-- [Python TOB API](/tob/python-tob)
-- [JavaScript TOB API](/tob/js-tob)
+- [什么是线程代理对象](./concept)
+- [TOB 原语](./primitives)
+- [Python TOB API](./python-tob)
+- [JavaScript TOB API](./js-tob)

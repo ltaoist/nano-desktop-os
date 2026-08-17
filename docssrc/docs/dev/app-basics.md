@@ -30,7 +30,7 @@ import nano_tob
 <script src="/nano_tob.js"></script>
 ```
 
-TOB 的具体用法见 [TOB 编程](/tob/) 章节。
+TOB 的具体用法见 [TOB 编程](../tob/) 章节。
 
 ## App 模式
 
@@ -182,4 +182,4 @@ async def __nanoAppMain():
 
 ---
 
-- [安装与分发](/dev/debug-install)
+- [安装与分发](./debug-install)

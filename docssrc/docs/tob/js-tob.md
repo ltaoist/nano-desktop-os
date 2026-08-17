@@ -24,11 +24,11 @@ function mountTOBMethod(tob, method, delegate)   // 同步
 async function callTOBMethod(tob, method, params)// params 为数组
 ```
 
-各函数语义见 [TOB 原语](/tob/primitives)。
+各函数语义见 [TOB 原语](./primitives)。
 
 ---
 
-- [TOB 编程](/tob)
-- [什么是线程代理对象](/tob/concept)
-- [TOB 原语](/tob/primitives)
-- [Python TOB API](/tob/python-tob)
+- [TOB 编程](./)
+- [什么是线程代理对象](./concept)
+- [TOB 原语](./primitives)
+- [Python TOB API](./python-tob)

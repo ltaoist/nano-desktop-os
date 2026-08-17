@@ -12,7 +12,7 @@ Python 后端和 JavaScript 前端都可以创建多个TOB。不同的逻辑线�
 
 ---
 
-- [TOB 编程](/tob)
-- [TOB 原语](/tob/primitives)
-- [Python TOB API](/tob/python-tob)
-- [JavaScript TOB API](/tob/js-tob)
+- [TOB 编程](./)
+- [TOB 原语](./primitives)
+- [Python TOB API](./python-tob)
+- [JavaScript TOB API](./js-tob)

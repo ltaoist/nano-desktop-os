@@ -58,4 +58,4 @@ python src/backend/launch.py
 
 ---
 
-- 下一步：[应用开发](/dev/) — 学习编写 Nano Desktop OS 应用
+- 下一步：[应用开发](../dev/) — 学习编写 Nano Desktop OS 应用

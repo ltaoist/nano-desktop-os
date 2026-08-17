@@ -1,6 +1,6 @@
 # Python TOB API
 
-Python 端 TOB 模块为 `nano_tob`，基于 asyncio 实现。所有异步函数以 `coroutine` 形式提供，必须 `await`。导入方式见 [编写应用 - 导入 SDK](/dev/app-basics#导入-sdk)。
+Python 端 TOB 模块为 `nano_tob`，基于 asyncio 实现。所有异步函数以 `coroutine` 形式提供，必须 `await`。导入方式见 [编写应用 - 导入 SDK](../dev/app-basics#导入-sdk)。
 
 ## 函数参考
 
@@ -20,11 +20,11 @@ def mountTOBMethod(tob: object, method: str, delegate: Callable) -> None: ...  #
 async def callTOBMethod(tob: object, method: str, params: list) -> Any: ...
 ```
 
-各函数语义见 [TOB 原语](/tob/primitives)。
+各函数语义见 [TOB 原语](./primitives)。
 
 ---
 
-- [TOB 编程](/tob)
-- [什么是线程代理对象](/tob/concept)
-- [TOB 原语](/tob/primitives)
-- [JavaScript TOB API](/tob/js-tob)
+- [TOB 编程](./)
+- [什么是线程代理对象](./concept)
+- [TOB 原语](./primitives)
+- [JavaScript TOB API](./js-tob)

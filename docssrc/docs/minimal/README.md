@@ -56,7 +56,7 @@ Nano Desktop OS 的后端是一个 FastAPI 应用（`src/backend/main.py`），�
 
 ## 组件导航
 
-- [TOB 服务器实现](/minimal/tob-server) — 内部数据结构、消息协议、调用路由与代理机制
-- [线程生命周期](/minimal/thread-manager) — 子进程启动、THREAD_ID 传播、进程存活检测、优雅关闭
-- [应用与数据](/minimal/app-filesystem) — 应用类型识别、index.html 注入、静态文件服务、数据存储
-- [系统服务](/minimal/system-services) — 认证、通知、SSE 总线的实现细节
+- [TOB 服务器实现](./tob-server) — 内部数据结构、消息协议、调用路由与代理机制
+- [线程生命周期](./thread-manager) — 子进程启动、THREAD_ID 传播、进程存活检测、优雅关闭
+- [应用与数据](./app-filesystem) — 应用类型识别、index.html 注入、静态文件服务、数据存储
+- [系统服务](./system-services) — 认证、通知、SSE 总线的实现细节

@@ -108,7 +108,7 @@ TOB 共提供 10 个原语，按类别给出每个原语的语义、参数和行
 
 ---
 
-- [TOB 编程](/tob)
-- [什么是线程代理对象](/tob/concept)
-- [Python TOB API](/tob/python-tob)
-- [JavaScript TOB API](/tob/js-tob)
+- [TOB 编程](./)
+- [什么是线程代理对象](./concept)
+- [Python TOB API](./python-tob)
+- [JavaScript TOB API](./js-tob)

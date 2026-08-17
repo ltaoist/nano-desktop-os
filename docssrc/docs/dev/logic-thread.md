@@ -12,4 +12,4 @@ TOB（Thread Objects Broker）的命名正源于此——它是线程对象之�
 
 ---
 
-- [编写应用](/dev/app-basics) — SDK 导入、两种应用形态、入口函数
+- [编写应用](./app-basics) — SDK 导入、两种应用形态、入口函数

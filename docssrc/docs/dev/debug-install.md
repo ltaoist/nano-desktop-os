@@ -39,5 +39,5 @@ myscript.py.zip
 
 ---
 
-- [TOB 编程](/tob/) — 前后端互操作的完整 API 参考
-- [calc.App 例程](/calc/) · [snake.App 例程](/snake/) — 通过代码学习
+- [TOB 编程](../tob/) — 前后端互操作的完整 API 参考
+- [calc.App 例程](../calc/) · [snake.App 例程](../snake/) — 通过代码学习
