@@ -1,0 +1,1 @@
+var e=`/nano-desktop-os/assets/snake.png`;export{e as t};

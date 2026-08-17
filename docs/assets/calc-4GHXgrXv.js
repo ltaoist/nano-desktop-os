@@ -1,0 +1,1 @@
+var e=`/nano-desktop-os/assets/calc.png`;export{e as t};

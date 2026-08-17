@@ -1,1 +1,0 @@
-var e=`/assets/calc.png`;export{e as t};
