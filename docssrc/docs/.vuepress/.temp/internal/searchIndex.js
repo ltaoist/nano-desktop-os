@@ -136,6 +136,13 @@ export const SEARCH_INDEX = [
     "extraFields": []
   },
   {
+    "title": "About Nano Desktop OS",
+    "headers": [],
+    "path": "/en/",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
     "title": "操作指南",
     "headers": [
       {
@@ -610,6 +617,612 @@ export const SEARCH_INDEX = [
     "headers": [],
     "path": "/tob/",
     "pathLocale": "/",
+    "extraFields": []
+  },
+  {
+    "title": "Branch Development",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Project structure",
+        "slug": "project-structure",
+        "link": "#project-structure",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Dev environment setup",
+        "slug": "dev-environment-setup",
+        "link": "#dev-environment-setup",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Process management",
+        "slug": "process-management",
+        "link": "#process-management",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Fork and customization",
+        "slug": "fork-and-customization",
+        "link": "#fork-and-customization",
+        "children": []
+      }
+    ],
+    "path": "/en/branch/",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "calc.App — Calculator",
+    "headers": [
+      {
+        "level": 2,
+        "title": "App description",
+        "slug": "app-description",
+        "link": "#app-description",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Design",
+        "slug": "design",
+        "link": "#design",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Backend implementation",
+        "slug": "backend-implementation",
+        "link": "#backend-implementation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Frontend implementation",
+        "slug": "frontend-implementation",
+        "link": "#frontend-implementation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Design review",
+        "slug": "design-review",
+        "link": "#design-review",
+        "children": []
+      }
+    ],
+    "path": "/en/calc/",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "Writing an App",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Importing the SDK",
+        "slug": "importing-the-sdk",
+        "link": "#importing-the-sdk",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "App mode",
+        "slug": "app-mode",
+        "link": "#app-mode",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Single-script mode",
+        "slug": "single-script-mode",
+        "link": "#single-script-mode",
+        "children": []
+      }
+    ],
+    "path": "/en/dev/app-basics.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "Install & Distribute",
+    "headers": [],
+    "path": "/en/dev/debug-install.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "Logical Thread Programming",
+    "headers": [],
+    "path": "/en/dev/logic-thread.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "App Development",
+    "headers": [],
+    "path": "/en/dev/",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "Usage Guide",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Startup and Login",
+        "slug": "startup-and-login",
+        "link": "#startup-and-login",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Main Interface and App Management",
+        "slug": "main-interface-and-app-management",
+        "link": "#main-interface-and-app-management",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Threads and Windows",
+        "slug": "threads-and-windows",
+        "link": "#threads-and-windows",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Built-in Examples",
+        "slug": "built-in-examples",
+        "link": "#built-in-examples",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Stopping the Service",
+        "slug": "stopping-the-service",
+        "link": "#stopping-the-service",
+        "children": []
+      }
+    ],
+    "path": "/en/guide/",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "Apps and Data",
+    "headers": [
+      {
+        "level": 2,
+        "title": "App type detection",
+        "slug": "app-type-detection",
+        "link": "#app-type-detection",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "App content serving",
+        "slug": "app-content-serving",
+        "link": "#app-content-serving",
+        "children": [
+          {
+            "level": 3,
+            "title": "Where nano_tob.js is served",
+            "slug": "where-nano-tob-js-is-served",
+            "link": "#where-nano-tob-js-is-served",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Install mechanism",
+        "slug": "install-mechanism",
+        "link": "#install-mechanism",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Data storage framework",
+        "slug": "data-storage-framework",
+        "link": "#data-storage-framework",
+        "children": []
+      }
+    ],
+    "path": "/en/minimal/app-filesystem.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "Minimal System",
+    "headers": [
+      {
+        "level": 2,
+        "title": "System overview",
+        "slug": "system-overview",
+        "link": "#system-overview",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "The full thread creation chain",
+        "slug": "the-full-thread-creation-chain",
+        "link": "#the-full-thread-creation-chain",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "ID system",
+        "slug": "id-system",
+        "link": "#id-system",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Component navigation",
+        "slug": "component-navigation",
+        "link": "#component-navigation",
+        "children": []
+      }
+    ],
+    "path": "/en/minimal/",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "System Services",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Auth (auth.py)",
+        "slug": "auth-auth-py",
+        "link": "#auth-auth-py",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "SSE event bus (sse_bus.py)",
+        "slug": "sse-event-bus-sse-bus-py",
+        "link": "#sse-event-bus-sse-bus-py",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Notification bus (notification_bus.py)",
+        "slug": "notification-bus-notification-bus-py",
+        "link": "#notification-bus-notification-bus-py",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Frontend architecture highlights",
+        "slug": "frontend-architecture-highlights",
+        "link": "#frontend-architecture-highlights",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Static file serving directory mapping",
+        "slug": "static-file-serving-directory-mapping",
+        "link": "#static-file-serving-directory-mapping",
+        "children": []
+      }
+    ],
+    "path": "/en/minimal/system-services.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "Thread Lifecycle",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Why subprocesses",
+        "slug": "why-subprocesses",
+        "link": "#why-subprocesses",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Subprocess startup mechanism",
+        "slug": "subprocess-startup-mechanism",
+        "link": "#subprocess-startup-mechanism",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Bidirectional propagation of THREAD_ID",
+        "slug": "bidirectional-propagation-of-thread-id",
+        "link": "#bidirectional-propagation-of-thread-id",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Process liveness detection",
+        "slug": "process-liveness-detection",
+        "link": "#process-liveness-detection",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Process termination",
+        "slug": "process-termination",
+        "link": "#process-termination",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Thread data persistence",
+        "slug": "thread-data-persistence",
+        "link": "#thread-data-persistence",
+        "children": []
+      }
+    ],
+    "path": "/en/minimal/thread-manager.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "TOB Server Implementation",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Connection model",
+        "slug": "connection-model",
+        "link": "#connection-model",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Five core data structures",
+        "slug": "five-core-data-structures",
+        "link": "#five-core-data-structures",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Full routing process of a remote call",
+        "slug": "full-routing-process-of-a-remote-call",
+        "link": "#full-routing-process-of-a-remote-call",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Connection cleanup",
+        "slug": "connection-cleanup",
+        "link": "#connection-cleanup",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Heartbeat keepalive",
+        "slug": "heartbeat-keepalive",
+        "link": "#heartbeat-keepalive",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Symmetric design of the two clients",
+        "slug": "symmetric-design-of-the-two-clients",
+        "link": "#symmetric-design-of-the-two-clients",
+        "children": []
+      }
+    ],
+    "path": "/en/minimal/tob-server.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "snake.App — Snake",
+    "headers": [
+      {
+        "level": 2,
+        "title": "App description",
+        "slug": "app-description",
+        "link": "#app-description",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Design",
+        "slug": "design",
+        "link": "#design",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Data persistence",
+        "slug": "data-persistence",
+        "link": "#data-persistence",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Backend implementation",
+        "slug": "backend-implementation",
+        "link": "#backend-implementation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Frontend implementation",
+        "slug": "frontend-implementation",
+        "link": "#frontend-implementation",
+        "children": []
+      },
+      {
+        "level": 2,
+        "title": "Design review",
+        "slug": "design-review",
+        "link": "#design-review",
+        "children": []
+      }
+    ],
+    "path": "/en/snake/",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "What Is a Thread Object Proxy",
+    "headers": [],
+    "path": "/en/tob/concept.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "JavaScript TOB API",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Function reference",
+        "slug": "function-reference",
+        "link": "#function-reference",
+        "children": []
+      }
+    ],
+    "path": "/en/tob/js-tob.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "TOB Primitives",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Environment initialization and shutdown",
+        "slug": "environment-initialization-and-shutdown",
+        "link": "#environment-initialization-and-shutdown",
+        "children": [
+          {
+            "level": 3,
+            "title": "initializeTOBM(url?)",
+            "slug": "initializetobm-url",
+            "link": "#initializetobm-url",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "closeTOBM()",
+            "slug": "closetobm",
+            "link": "#closetobm",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Object lifecycle",
+        "slug": "object-lifecycle",
+        "link": "#object-lifecycle",
+        "children": [
+          {
+            "level": 3,
+            "title": "createTOB()",
+            "slug": "createtob",
+            "link": "#createtob",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "forgetTOB(tob_id)",
+            "slug": "forgettob-tob-id",
+            "link": "#forgettob-tob-id",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "getTOB(tob_id)",
+            "slug": "gettob-tob-id",
+            "link": "#gettob-tob-id",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Naming and discovery",
+        "slug": "naming-and-discovery",
+        "link": "#naming-and-discovery",
+        "children": [
+          {
+            "level": 3,
+            "title": "nameTOB(tob, name)",
+            "slug": "nametob-tob-name",
+            "link": "#nametob-tob-name",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "waitNamedTOB(name, timeout?)",
+            "slug": "waitnamedtob-name-timeout",
+            "link": "#waitnamedtob-name-timeout",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "waitTOB(tob_id, timeout?)",
+            "slug": "waittob-tob-id-timeout",
+            "link": "#waittob-tob-id-timeout",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Method mounting and invocation",
+        "slug": "method-mounting-and-invocation",
+        "link": "#method-mounting-and-invocation",
+        "children": [
+          {
+            "level": 3,
+            "title": "mountTOBMethod(tob, method, delegate)",
+            "slug": "mounttobmethod-tob-method-delegate",
+            "link": "#mounttobmethod-tob-method-delegate",
+            "children": []
+          },
+          {
+            "level": 3,
+            "title": "callTOBMethod(tob, method, params)",
+            "slug": "calltobmethod-tob-method-params",
+            "link": "#calltobmethod-tob-method-params",
+            "children": []
+          }
+        ]
+      },
+      {
+        "level": 2,
+        "title": "Data types",
+        "slug": "data-types",
+        "link": "#data-types",
+        "children": []
+      }
+    ],
+    "path": "/en/tob/primitives.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "Python TOB API",
+    "headers": [
+      {
+        "level": 2,
+        "title": "Function reference",
+        "slug": "function-reference",
+        "link": "#function-reference",
+        "children": []
+      }
+    ],
+    "path": "/en/tob/python-tob.html",
+    "pathLocale": "/en/",
+    "extraFields": []
+  },
+  {
+    "title": "TOB Programming",
+    "headers": [],
+    "path": "/en/tob/",
+    "pathLocale": "/en/",
     "extraFields": []
   },
   {

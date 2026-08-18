@@ -1,0 +1,1 @@
+var e=`/nano-desktop-os/assets/system_launch.png`,t=`/nano-desktop-os/assets/login.png`,n=`/nano-desktop-os/assets/browse_apps.png`,r=`/nano-desktop-os/assets/start_thread.png`;export{e as i,n,t as r,r as t};
